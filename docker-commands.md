@@ -49,6 +49,4 @@ docker run -p <host_port>:<container_port> -v <host_path>:<container_path> -e KE
 Remember, these commands are introductory. Docker offers a wide range of options and configurations for more complex use cases. For comprehensive information and examples tailored to your needs, refer to the [official Docker documentation](https://docs.docker.com/).
 
 Feel free to explore Docker further and unleash its capabilities for efficient application development and deployment.
-```
-
 Feel free to adapt the markdown content as needed for your documentation. If you have any further requests or need more assistance, please let me know!
