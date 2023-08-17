@@ -1,34 +1,25 @@
 ## Dockerfile for Packaging a Java Application
 
-This Dockerfile is used to package a Java application into a Docker image.
+```Dockerfile
+FROM openjdk:8u151-jdk-alpine3.7
 
-### Base Image
+# Expose port 8070 to allow communication with the application
+EXPOSE 8070
 
-The image is built from the `openjdk:8u151-jdk-alpine3.7` base image. This provides a lightweight environment for running Java applications.
+# Set the environment variable APP_HOME
+ENV APP_HOME /usr/src/app
 
-### Exposed Port
+# Copy the application JAR file to the container's APP_HOME directory
+COPY target/shopping-cart-0.0.1-SNAPSHOT.jar $APP_HOME/app.jar
 
-The Docker container exposes port `8070` to allow communication with the application.
+# Set the working directory to APP_HOME
+WORKDIR $APP_HOME
 
-### Application Home Directory
-
-The environment variable `APP_HOME` is set to `/usr/src/app`, which will serve as the application's home directory within the container.
-
-### Copying Application JAR
-
-The built JAR file `shopping-cart-0.0.1-SNAPSHOT.jar` from the `target` directory is copied to the container's `APP_HOME` directory.
-
-### Working Directory
-
-The working directory is set to `APP_HOME`, ensuring that subsequent commands are executed within this directory.
-
-### Entry Point
-
-The `ENTRYPOINT` instruction specifies the command to be executed when the container starts. In this case, it launches the Java application by executing the JAR file with the command:
-
-```bash
-exec java -jar app.jar
+# Specify the command to run when the container starts
+ENTRYPOINT exec java -jar app.jar
 ```
 
-This Dockerfile allows you to package and run your Java application within a Docker container, providing a consistent and isolated environment for your application to execute.
-Remember to customize the Dockerfile and commands as needed for your specific application.
+This Dockerfile is designed to package a Java application into a Docker image. It uses the `openjdk:8u151-jdk-alpine3.7` base image, exposes port `8070` for communication, and sets up the application's environment and entry point. The JAR file `shopping-cart-0.0.1-SNAPSHOT.jar` is copied into the container's `APP_HOME` directory, and the Java application is executed using the `java -jar` command.
+
+This Dockerfile provides a streamlined way to containerize and deploy your Java application within a Docker container.
+Feel free to use this markdown content in your documentation or wherever you need to explain and showcase the provided Dockerfile.
