@@ -1,4 +1,3 @@
-```markdown
 # Docker Basic Commands and Usage
 
 Docker is a powerful platform that simplifies application deployment using containers. Here are some essential Docker commands to help you get started:
