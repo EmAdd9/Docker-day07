@@ -79,7 +79,7 @@ pipeline {
         }
     }
 }
-
+```
 This Jenkins pipeline script automates the build, testing, and deployment of a Java application using Docker. It includes stages for checking out code, compiling, analyzing with SonarQube, performing OWASP Dependency Check, building a Docker image, pushing the image to a Docker registry, and deploying it to a Docker container.
 
 Please adjust the formatting as needed in your markdown documentation.
